@@ -1,7 +1,7 @@
 {
   "name": "webpack-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "<a name=\"readme-top\"></a>",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,6 +20,7 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
+    "hint": "^7.1.10",
     "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
     "stylelint": "^13.13.1",
@@ -32,5 +33,6 @@
   },
   "dependencies": {
     "lodash": "^4.17.20"
-  }
+  },
+  "main": "webpack.config.js"
 }
