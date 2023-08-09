@@ -3,15 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    index: './src/index.js',
 
+  entry: './src/index.js',
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack App',
-      filename: 'index.html',
-      template: 'src/index.html',
+      title: 'Output Management',
+      template: './src/index.html',
     }),
   ],
 
@@ -20,11 +21,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'dist'),
-    },
-    port: 3000,
+
+  optimization: {
+    runtimeChunk: 'single',
+
   },
   module: {
     rules: [
@@ -37,7 +37,9 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+
         type: 'asset/resource',
       },
     ],

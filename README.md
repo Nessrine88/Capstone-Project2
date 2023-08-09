@@ -1,136 +1,97 @@
-# Capstone-Project2<h1 align ="center" > Javascript Capstone project</h1>
 <a name="readme-top"></a>
 
+  <h3><b>LeaderBoard</b></h3>
 
-
-<!-- TABLE OF CONTENTS -->
-
+</div>
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
+- [📖 About the Project]
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📝 License](https://github.com/ZabihullahNooriWardak/LeaderBoard/blob/dev/LICENSE)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Leaderboard <a name="about-project"></a>
-
-> The Leaderboard Project is a web application that allows users to view and compare scores on a leaderboard.
-
-
 ## 🛠 Built With <a name="built-with"></a>
 
->The project is built using the following technologies and tools:
+### Tech Stack <a name="tech-stack"></a>
 
-- HTML
-- CSS
-- JavaScript
-- HtmlWebpackPlugin 
-- webpack-dev-server
 
-#
+   #### HTML, CSS & Javascript.
 
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> The main features of the application include:
-
-- **Real-time Leaderboard**: Users can view scores and rankings in real-time.
-- **User Profiles**: Each user has a profile displaying their scores and achievements.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
+- **[User-friendly Interface]**
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-- Coming soon ...
-
+### [ live demo link ](https://zabihullahnooriwardak.github.io/LeaderBoard/dist/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Before you begin, make sure you have the necessary software and dependencies installed on your system. These may include programming languages, package managers, and databases required by the project. Check the "Prerequisites" section of the README for specific requirements.
+>
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
-
-1. Clone the repository to your desired location:
-```sh
-git clone git@github.com:Nessrine88/Leaderboard.git
-```
-
-2. Open the project folder in your code editor.
+ node.js installed
+ webpack installed
 
 ### Setup
 
 Clone this repository to your desired folder:
+And go to that folder where you want the project for example if you want to have it in my-folder you can go like this 
+  C:\Users\Dell>
+  cd my-folder
+  C:\Users\Dell\my-folder
+After you can clone using this command  
+  git clone https://github.com/ZabihullahNooriWardak/LeaderBoard.git
 
-Run Dev Server (Port 3000)
 
-```
-  npm run dev
-```
+### Install
 
+Install this project with:
+
+this project does not have need further installition just 
+you should have IDE and browser node installed and webpack too.
 
 ### Usage
 
-To run the project, execute the following command:
-
-Run Dev Server (Port 3000)
-
-```
-  npm run dev
-```
-### Run tests
-
-Tests for this project will be added in the future.
-
-### Deployment
-
-You can deploy this project using:
-
-
-1. Choose a hosting provider or platform for your website (e.g., GitHub Pages, Netlify, Heroku).
-
-2. Set up the hosting environment according to the provider's instructions.
-
-3. Build or compile your project files, if necessary.
-
-4. Upload or deploy the project files to the hosting environment.
-
-5. Access your deployed website using the provided URL or domain.
+to run this project you need Google chrome or other browser.
+and from the root directory run npm start to see in the live server.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-# 👥 Authors <a name="Nessrine Macherki"></a>
+## 👥 Authors <a name="authors"></a>
 
-👤 **Macherki Nessrine**
-- GitHub: [@githubhandle](https://github.com/Nessrine88)
-- Twitter: [@twitterhandle](https://twitter.com/Nessour88)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nessrine-macherki-86959196/)
+> 
+
+👤 **Zabi**
+
+- GitHub: [@githubhandle](https://github.com/ZabihullahNooriWardak)
+- Twitter: [@twitterhandle](https://twitter.com/ZabiNoo31954752)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/zabih-noori-aa59a924a/)
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,59 +99,29 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Planned future features include:
+ - Adding some new Feature
+ - Working on style and appearance
 
-- [1] **Leaderboard Filtering**
-- [2] **User Authentication**
-
-
- 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Nessrine88/Leaderboard/issues).
+Contributions, issues, and feature requests are welcome!
 
+Feel free to check the [issues page](../../issues/).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> If you find this project helpful or you like it, please give it a star ⭐️. 
-
-
+If you like this project give it a star⭐
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> I would like to express our gratitude to Microverse online school and our coding partners..
-
-
+I would like to thank microverse and my family for supporting me to build this project.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> - **How to update user profiles?**
-
-  - To update user profiles, users can navigate to the "Profile" section and click the "Edit Profile" button.
-How to view the overall leaderboard?
-
->- **How to view the overall leaderboard?**
-
-  - Users can access the leaderboard from the homepage by clicking the "Leaderboard" link.
-  
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
->This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
