@@ -1,20 +1,21 @@
 import './style.css';
-import { addData, displayAllScore } from './modules/Api.js';
-// catchData();
-const submitBtn = document.querySelector('#submit');
-const nameTxtField = document.querySelector('#name');
-const scoreTxtField = document.querySelector('#score');
-window.onload = () => {
-  displayAllScore();
-};
-document.getElementById('refresh').addEventListener('click', () => {
-  displayAllScore();
-});
-submitBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  const scoreValue = scoreTxtField.value;
-  const nameValue = nameTxtField.value;
-  addData(nameValue, scoreValue);
-  scoreTxtField.value = '';
-  nameTxtField.value = '';
-});
+
+let pathImage;
+async function fetchApi() {
+  const response = await fetch('https://api.tvmaze.com/search/shows?q=girls');
+  const data = await response.json();
+  return data;
+}
+
+async function loadImage() {
+  const arr = await fetchApi();
+  for (let i = 0; i < arr.length; i += 1) {
+    pathImage = arr[i].show.image.medium;
+    const img = document.createElement('img');
+    const body = document.querySelector('.hero');
+    img.src = pathImage;
+    body.appendChild(img);
+  }
+}
+
+loadImage();
