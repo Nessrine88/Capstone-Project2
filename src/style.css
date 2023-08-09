@@ -6,10 +6,30 @@
   margin-top: 5px;
 }
 
+.hearth {
+  color: yellowgreen;
+  font-size: 32px;
+}
+
+.containerHearth {
+  flex-basis: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 img {
   width: 320px;
   margin-bottom: 20px;
   border-radius: 10px;
+}
+
+.containerLike {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
 #header {
