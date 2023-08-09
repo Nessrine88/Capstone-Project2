@@ -49,21 +49,23 @@ async function loadImage() {
 
       <div class="popup">
       <div class="popup-header">
-      <i class="bx bx-x close-icon"></i>
+        <i class="bx bx-x close-icon"></i>
       </div>
       <div class="imageContainer"><img src="${imgPath}" /></div>
-        <div class="informations">
+      <div class="informations">
         <h1>${nameShow}</h1>
-        <p>Score ${score}</p>
-        <p>Genres${genres}</p>
-        <p>Premiered ${premiered}</p>
-        <p>Summary ${summary}</p>
+        <hr>
+        ${score !== undefined ? `<p>Score ${score}</p>` : ''}
+        ${genres !== null ? `<p>Genres ${genres}</p>` : ''}
+        ${premiered !== null ? `<p>Premiered ${premiered}</p>` : ''}
+        ${summary !== null ? `<h2>Summary</h2><p> ${summary}</p>` : ''}
         <form>
-        <textarea placeholder="write a comment"></textarea>
+          <input type="text" placeholder="Name">
+          <textarea placeholder="write a comment"></textarea>
         </form>
         <button class='commentBtn'>Comment</button>
-        </div>
-        </div>
+      </div>
+    </div>
 
       `;
       // Inside the loadImage function, after adding the HTML
