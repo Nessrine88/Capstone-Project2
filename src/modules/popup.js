@@ -1,4 +1,5 @@
-import { loadImage } from "./Api.js"; 
+import { loadImage } from './Api.js';
+
 const commentButton = document.querySelector('.comment-button');
 commentButton.addEventListener('click', (e) => {
   const containerLike = e.target.parentElement;
@@ -8,7 +9,7 @@ commentButton.addEventListener('click', (e) => {
   
   `;
 
-  console.log('click')
+  console.log('click');
 });
 
 loadImage();

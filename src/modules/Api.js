@@ -2,9 +2,8 @@ let pathImage;
 async function fetchApi() {
   const response = await fetch('https://api.tvmaze.com/search/shows?q=girls');
   const data = await response.json();
-   console.log(data)
+  console.log(data);
   return data;
- 
 }
 
 async function loadImage() {
@@ -35,18 +34,18 @@ async function loadImage() {
     commentButton.textContent = 'Comment';
     containerLike.appendChild(commentButton);
 
-    //Nessrine Code
-  
+    // Nessrine Code
+
     commentButton.addEventListener('click', (e) => {
       const showInfo = arr[i].show;
-      const score = showInfo.score;
+      const { score } = showInfo;
       const genres = showInfo.genres.join(', ');
-      const premiered = showInfo.premiered;
-      const summary = showInfo.summary;
+      const { premiered } = showInfo;
+      const { summary } = showInfo;
       const containerLike = e.target.parentElement;
       const imgPath = containerLike.parentElement.querySelector('img').src;
-      const popupContainer=document.querySelector('.popupContainer')
-     popupContainer.innerHTML = `
+      const popupContainer = document.querySelector('.popupContainer');
+      popupContainer.innerHTML = `
 
       <div class="popup">
       <div class="popup-header">
@@ -67,19 +66,15 @@ async function loadImage() {
         </div>
 
       `;
-// Inside the loadImage function, after adding the HTML
-const popup = document.querySelector('.popup');
-const closeIcon = document.querySelector('.close-icon');
+      // Inside the loadImage function, after adding the HTML
+      const popup = document.querySelector('.popup');
+      const closeIcon = document.querySelector('.close-icon');
 
-closeIcon.addEventListener('click', () => {
-  popup.remove(); // Remove the popup from the DOM
-});
-
+      closeIcon.addEventListener('click', () => {
+        popup.remove(); // Remove the popup from the DOM
+      });
     });
   }
 }
-
-
-
 
 export { loadImage, fetchApi };
