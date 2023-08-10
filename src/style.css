@@ -150,10 +150,11 @@ hr {
 .close-icon:hover {
   background-color: #bedcfc;
 }
+
 .commentList {
   background-color: bisque;
   display: block;
-  padding:10px ;
+  padding: 10px;
   width: 80%;
 }
 
@@ -168,4 +169,3 @@ hr {
   display: flex;
   flex-direction: column;
 }
-
