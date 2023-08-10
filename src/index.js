@@ -1,4 +1,6 @@
 // index.js
+import './style.css';
+
 let pathImage;
 
 async function fetchApi() {
