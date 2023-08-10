@@ -1,8 +1,10 @@
+
 let pathImage;
 const app_id = 'your_app_id_here'; // Replace with the actual app ID
 
 let apiBaseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/'; // Replace with your actual API base URL
 const commentData = {};
+
 async function fetchApi() {
   const response = await fetch('https://api.tvmaze.com/search/shows?q=girls');
   const data = await response.json();
@@ -10,6 +12,7 @@ async function fetchApi() {
   return data;
  
 }
+
 function updateCommentList(popupContainer, showId) {
   const commentList = popupContainer.querySelector('.commentList');
   commentList.innerHTML = '';
@@ -193,3 +196,23 @@ closeIcon.addEventListener('click', () => {
 
 
 export { loadImage, fetchApi };
+
+const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ZkLkIUUV1lTLjqilepgf';
+
+async function getLikes() {
+  const response = await fetch(`${apiLikes}/likes`);
+  return response.json();
+}
+
+async function postLikes(id) {
+  const response = await fetch(`${apiLikes}/likes`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ item_id: id }),
+  });
+  return response.text();
+}
+export { fetchApi, postLikes, getLikes };
+
