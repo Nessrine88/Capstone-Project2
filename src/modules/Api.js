@@ -34,4 +34,4 @@ async function loadImage() {
     containerLike.appendChild(commentButton);
   }
 }
-export { loadImage, fetchApi };
+// export { loadImage, fetchApi };
