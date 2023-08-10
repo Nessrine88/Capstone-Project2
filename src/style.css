@@ -131,6 +131,7 @@ hr {
   border-radius: 4px;
   cursor: pointer;
   color: #fff;
+  width: fit-content;
 }
 
 .popup .informations button:hover {
@@ -149,3 +150,22 @@ hr {
 .close-icon:hover {
   background-color: #bedcfc;
 }
+.commentList {
+  background-color: bisque;
+  display: block;
+  padding:10px ;
+  width: 80%;
+}
+
+.commentList li {
+  background-color: #fff;
+  margin-left: 0;
+  border-radius: 0%;
+  border: 1px solid;
+}
+
+#commentForm {
+  display: flex;
+  flex-direction: column;
+}
+
