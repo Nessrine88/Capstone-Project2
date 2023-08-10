@@ -1,14 +1,7 @@
-// index.js
 import './style.css';
+import { fetchApi, getLikes, postLikes } from './modules/Api';
 
 let pathImage;
-
-async function fetchApi() {
-  const response = await fetch('https://api.tvmaze.com/search/shows?q=girls');
-  const data = await response.json();
-  return data;
-}
-
 async function loadImage() {
   const arr = await fetchApi();
   for (let i = 0; i < arr.length; i += 1) {
@@ -19,7 +12,6 @@ async function loadImage() {
     img.src = pathImage;
     divConatinerSingleImage.appendChild(img);
     ContainerAllImages.appendChild(divConatinerSingleImage);
-
     const containerLike = document.createElement('div');
     containerLike.classList.add('containerLike');
     const nameShow = arr[i].show.name;
@@ -27,7 +19,6 @@ async function loadImage() {
     nameShowparagraph.textContent = nameShow;
     containerLike.appendChild(nameShowparagraph);
     divConatinerSingleImage.appendChild(containerLike);
-
     const containerHearth = document.createElement('div');
     containerHearth.classList.add('containerHearth');
     const Hearth = document.createElement('span');
@@ -46,24 +37,6 @@ async function loadImage() {
     commentButton.textContent = 'Comment';
     containerLike.appendChild(commentButton);
   }
-}
-
-const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ZkLkIUUV1lTLjqilepgf';
-
-async function getLikes() {
-  const response = await fetch(`${apiLikes}/likes`);
-  return response.json();
-}
-
-async function postLikes(id) {
-  const response = await fetch(`${apiLikes}/likes`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ item_id: id }),
-  });
-  return response.text();
 }
 
 const containerAllImages = document.querySelector('.hero'); // Select the parent element
