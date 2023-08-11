@@ -1,8 +1,10 @@
 // index.js
 import './style.css';
+
 import {
   postComments, postLikes, getLikes, apiLikes, displayComments,
 } from './commentApi.js';
+import commentCounter from './modules/commentsCounter';
 
 let pathImage;
 
@@ -71,7 +73,7 @@ async function loadImage() {
           }
 
           const responseData = await response.json();
-          console.log('Successfully fetched comments:', responseData);
+          console.log('Successfully fetched comments:');
 
           displayComments(responseData, commentList);
 
@@ -106,7 +108,7 @@ async function loadImage() {
       </div>
       </div>
       <div class="comments-section">
-      <h2>Comments</h2>
+      <h2 class="commentTitle">Comments (${commentCounter()})</h2>
       <hr>
       <ul class="commentList"></ul>
       </div>
@@ -126,7 +128,7 @@ async function loadImage() {
         const commentText = document.getElementById('commentTextarea').value;
         const displayComment = document.createElement('div');
         displayComment.innerHTML = `
-      <li id='lis'>${commentName}: ${commentText}</li>
+      <li class='lis'>${commentName}: ${commentText} s</li>
 `;
         commentList.appendChild(displayComment);
         await postComments(showId, commentName, commentText);

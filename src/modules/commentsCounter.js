@@ -1,5 +1,6 @@
 const commentCounter = () => {
-  const counter = document.querySelectorAll('[class="comment_span"');
+  const counter = document.querySelectorAll('[class="lis"');
+  console.log(counter.length);
   return counter.length;
 };
 
