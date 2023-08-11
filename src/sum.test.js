@@ -1,4 +1,3 @@
-
 import cardCounter from './sum'; // Adjust the import path if needed
 
 test('should update the card counter with the correct number of cards', () => {
@@ -24,7 +23,6 @@ test('should return 4 cards', () => {
   cardCounter();
   expect(cardCounter()).not.toBe(5);
 });
-
 
 test('should return 0 cards', () => {
   document.body.innerHTML = `
