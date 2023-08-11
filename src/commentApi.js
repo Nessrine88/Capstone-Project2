@@ -1,5 +1,14 @@
 const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ZkLkIUUV1lTLjqilepgf';
 
+ function displayComments(responseData, commentList) {
+    for (let i = 0; i < responseData.length; i += 1) {
+      var commentList = document.querySelector('.commentList');
+      const commentDiv = document.createElement('div');
+      commentDiv.innerHTML = `<span>comment number</span> :${i + 1}<p>${responseData[i].comment}: ${responseData[i].username}</p>`;
+      commentList.appendChild(commentDiv);
+    }
+  }
+
 const postComments = async (id, name, comment) => {
   try {
     const response = await fetch(`${apiLikes}/comments`, {
@@ -42,5 +51,5 @@ async function postLikes(id) {
 }
 
 export {
-  postComments, postLikes, getLikes, apiLikes,
+  postComments, postLikes, getLikes, apiLikes,displayComments
 };
