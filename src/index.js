@@ -65,33 +65,33 @@ async function loadImage() {
       const popupContainer=document.querySelector('.popupContainer');
      popupContainer.innerHTML = `
 
-     <div class="popup">
-     <div class="popup-header">
-       <i class="bx bx-x close-icon"></i>
-     </div>
-     <div class="imageContainer"><img src="${imgPath}" /></div>
-     <div class="informations">
-       <h1>${nameShow}</h1>
-       <hr>
+      <div class="popup">
+      <div class='flex'>
+      <div class="popup-header">
+      <i class="bx bx-x close-icon"></i>
+      </div>
+      <div class="imageContainer"><img src="${imgPath}" /></div>
+      <div class="informations">
+      <h1>${nameShow}</h1>
+      <hr>
        ${score !== undefined ? `<p>Score ${score}</p>` : ''}
        ${genres !== null ? `<p>Genres ${genres}</p>` : ''}
        ${premiered !== null ? `<p>Premiered ${premiered}</p>` : ''}
        ${summary !== null ? `<h2>Summary</h2><p> ${summary}</p>` : ''}
-       <form id='commentForm'>
-         <input id='commentName' type="text" placeholder="Name">
-         <textarea id='commentTextarea' placeholder="write a comment"></textarea>
-         <button class='c'>Comment</button>
-       </form>
-       
-       <div class="comments-section">
-       <h2>Comments</h2>
-       <hr>
-       <ul class="commentList"></ul>
-     </div>
-   
-      
-     </div>
-   </div>
+      <form id='commentForm'>
+      <input id='commentName' type="text" placeholder="Name">
+      <textarea id='commentTextarea' placeholder="write a comment"></textarea>
+      <button class='c'>Comment</button>
+      </form>
+      </div>
+      </div>
+      <div class="comments-section">
+      <h2>Comments</h2>
+      <hr>
+      <ul class="commentList"></ul>
+      </div>
+      </div>
+ 
         
 
       `;

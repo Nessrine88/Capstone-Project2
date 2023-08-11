@@ -82,8 +82,7 @@ footer {
   height: 100%;
   background-color: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   overflow-y: scroll;
   padding-top: 70px;
   padding-left: 20px;
@@ -103,22 +102,24 @@ hr {
   margin: 20px;
   margin-bottom: 100px;
   background-color: #fff;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup .informations p {
   font-weight: 800;
-  width: 80%;
+
   background-color: #fff;
 }
 
 .popup .informations input {
-  width: 80%;
+  
   margin-bottom: 10px;
   padding: 10px;
 }
 
 .popup .informations textarea {
-  width: 80%;
+ 
   margin-bottom: 10px;
   height: 100px;
   padding: 10px;
@@ -155,7 +156,8 @@ hr {
   background-color: bisque;
   display: block;
   padding: 10px;
-  width: 80%;
+  margin-bottom: 30px;
+ 
 }
 
 .commentList li {
@@ -168,4 +170,12 @@ hr {
 #commentForm {
   display: flex;
   flex-direction: column;
+ 
 }
+.flex {
+ display: flex;
+}
+comment-section {
+  margin-bottom: 100px;
+}
+
