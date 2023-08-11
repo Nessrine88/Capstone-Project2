@@ -46,6 +46,7 @@ ul li {
   background-color: grey;
   border-radius: 5px;
   padding: 5px;
+  color: aquamarine;
 }
 
 header {
@@ -94,7 +95,6 @@ footer {
 }
 
 hr {
-  width: 82.5%;
   margin: 0;
 }
 
