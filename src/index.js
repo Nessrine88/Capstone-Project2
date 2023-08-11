@@ -4,7 +4,6 @@ import './style.css';
 import {
   postComments, postLikes, getLikes, apiLikes, displayComments,
 } from './commentApi.js';
-import commentCounter from './modules/commentsCounter';
 
 let pathImage;
 
@@ -108,7 +107,7 @@ async function loadImage() {
       </div>
       </div>
       <div class="comments-section">
-      <h2 class="commentTitle">Comments (${commentCounter()})</h2>
+      <h2 class="commentTitle">Comments</h2>
       <hr>
       <ul class="commentList"></ul>
       </div>
