@@ -1,9 +1,11 @@
 // index.js
 let pathImage;
-import './style.css'
+import './style.css';
+
 async function fetchApi() {
   const response = await fetch('https://api.tvmaze.com/search/shows?q=girls');
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
@@ -17,7 +19,7 @@ async function loadImage() {
     img.src = pathImage;
     divConatinerSingleImage.appendChild(img);
     ContainerAllImages.appendChild(divConatinerSingleImage);
-
+    
     const containerLike = document.createElement('div');
     containerLike.classList.add('containerLike');
     const nameShow = arr[i].show.name;
@@ -97,8 +99,9 @@ const closeIcon = document.querySelector('.close-icon');
 closeIcon.addEventListener('click', () => {
   popup.remove(); // Remove the popup from the DOM
 });
+//add eventListener to the comment button of popup
 const commentBtn=document.querySelector('.c');
-commentBtn.addEventListener('click',(e)=>{
+commentBtn.addEventListener('click',async(e)=>{
 e.preventDefault();
 
 const commentName=document.getElementById('commentName').value;
@@ -108,11 +111,62 @@ displayComment.innerHTML = `
 <li>${commentName}: ${commentText}</li>
 `;
 console.log(displayComment)
-const commentList=document.querySelector('.commentList');
-commentList.appendChild(displayComment)
+
+commentList.appendChild(displayComment);
+await postComments(showId, commentName, commentText); // Wait for the post to complete
+await getComments(showId); // Wait for the fetch to complete
 })
+let commentList=document.querySelector('.commentList');
+//add api to store data
 
+const getComments = async (itemId) => {
+  try {
+    const response = await fetch(`${apiLikes}/comments?item_id=${itemId}`);
 
+    if (!response.ok) {
+      throw new Error('Failed to fetch comments');
+    }
+
+    const responseData = await response.json(); // Read the response data once
+    console.log('Successfully fetched comments:', responseData);
+
+    for (let i = 0; i < responseData.length; i++) {
+      const commentDiv = document.createElement('div');
+      commentDiv.innerHTML = `<p>${responseData[i].comment}: ${responseData[i].username}</p>`;
+      commentList.appendChild(commentDiv);
+    }
+
+    return responseData; // Return the JSON data
+  } catch (error) {
+    console.error('An error occurred while fetching comments:', error);
+    throw error;
+  }
+};
+
+const postComments = async (id, name, comment) => {
+  try {
+    const response = await fetch(`${apiLikes}/comments`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ item_id: id, username: name, comment }),
+    });
+
+    const responseBody = await response.text(); // Read the response body once
+
+    if (response.ok) {
+      console.log('Comment posted successfully');
+    } else {
+      console.error('Failed to post comment:', response.statusText);
+    }
+
+    return responseBody; // Return the response body
+  } catch (error) {
+    console.error('An error occurred while posting the comment:', error);
+    throw error;
+  }
+};
 
   })
 }}
