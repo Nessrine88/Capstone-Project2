@@ -166,7 +166,6 @@ async function initializeLikes() {
 
   likeButtons.forEach(async (button) => {
     button.addEventListener('click', () => {
-   
       button.style.color = 'red';
     });
     const showId = button.id;
