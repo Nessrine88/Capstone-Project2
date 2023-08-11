@@ -116,7 +116,6 @@ async function loadImage() {
 
       `;
       await getComments(showId);
-
       const commentBtn = document.querySelector('.c');
 
       commentBtn.addEventListener('click', async (e) => {
@@ -126,7 +125,7 @@ async function loadImage() {
         const commentText = document.getElementById('commentTextarea').value;
         const displayComment = document.createElement('div');
         displayComment.innerHTML = `
-      <li id='lis'>${commentName}: ${commentText}</li>
+      <li ><span>comment </span> ${i + 1}:${commentName}: ${commentText}</li>
 `;
         commentList.appendChild(displayComment);
         await postComments(showId, commentName, commentText);
