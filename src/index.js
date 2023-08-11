@@ -1,11 +1,14 @@
 // index.js
-let pathImage;
 import './style.css';
+import {
+  postComments, postLikes, getLikes, apiLikes,
+} from './commentApi.js';
+
+let pathImage;
 
 async function fetchApi() {
   const response = await fetch('https://api.tvmaze.com/search/shows?q=girls');
   const data = await response.json();
-  console.log(data);
   return data;
 }
 
@@ -19,7 +22,7 @@ async function loadImage() {
     img.src = pathImage;
     divConatinerSingleImage.appendChild(img);
     ContainerAllImages.appendChild(divConatinerSingleImage);
-    
+
     const containerLike = document.createElement('div');
     containerLike.classList.add('containerLike');
     const nameShow = arr[i].show.name;
@@ -46,24 +49,20 @@ async function loadImage() {
     commentButton.textContent = 'Comment';
     containerLike.appendChild(commentButton);
 
-    //nessrine code
-    
-   
-    
-    commentButton.addEventListener('click', async(e) => {
-    
-      let showInfo = arr[i].show;
-      let showId = showInfo.id;
-      const score = showInfo.score;
+    // nessrine code
+
+    commentButton.addEventListener('click', async (e) => {
+      const showInfo = arr[i].show;
+      const showId = showInfo.id;
+      const { score } = showInfo;
       const genres = showInfo.genres.join(', ');
-      const premiered = showInfo.premiered;
-      const summary = showInfo.summary;
+      const { premiered } = showInfo;
+      const { summary } = showInfo;
       const containerLike = e.target.parentElement;
       const imgPath = containerLike.parentElement.querySelector('img').src;
-     
-  
-      const popupContainer=document.querySelector('.popupContainer');
-     popupContainer.innerHTML = `
+
+      const popupContainer = document.querySelector('.popupContainer');
+      popupContainer.innerHTML = `
 
       <div class="popup">
       <div class='flex'>
@@ -96,109 +95,60 @@ async function loadImage() {
 
       `;
 
-      const commentBtn=document.querySelector('.c');
-commentBtn.addEventListener('click',async(e)=>{
-e.preventDefault();
-var commentName = document.getElementById('commentName').value;
-      console.log(commentName);
-      var commentText = document.getElementById('commentTextarea').value;
-
-const displayComment = document.createElement('div');
-displayComment.innerHTML = `
-  <li>${commentName}: ${commentText}</li>
-`;
-commentList.appendChild(displayComment);
-
-});
-var commentName = document.getElementById('commentName').value;
-      console.log(commentName);
-      var commentText = document.getElementById('commentTextarea').value;
-      
-      let commentList=document.querySelector('.commentList');
+      const commentList = document.querySelector('.commentList');
       const getComments = async (itemId) => {
         try {
           const response = await fetch(`${apiLikes}/comments?item_id=${itemId}`);
-      
+
           if (!response.ok) {
             throw new Error('Failed to fetch comments');
           }
-      
+
           const responseData = await response.json(); // Read the response data once
           console.log('Successfully fetched comments:', responseData);
-      
-          for (let i = 0; i < responseData.length; i++) {
+
+          for (let i = 0; i < responseData.length; i += 1) {
             const commentDiv = document.createElement('div');
             commentDiv.innerHTML = `<p>${responseData[i].comment}: ${responseData[i].username}</p>`;
             commentList.appendChild(commentDiv);
           }
-      
+
           return responseData; // Return the JSON data
         } catch (error) {
           console.error('An error occurred while fetching comments:', error);
           throw error;
         }
       };
-      
-      const postComments = async (id, name, comment) => {
-        try {
-          const response = await fetch(`${apiLikes}/comments`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ item_id: id, username: name, comment }),
-          });
-      
-          const responseBody = await response.text(); // Read the response body once
-      
-          if (response.ok) {
-            console.log('Comment posted successfully');
-          } else {
-            console.error('Failed to post comment:', response.statusText);
-          }
-      
-          return responseBody; // Return the response body
-        } catch (error) {
-          console.error('An error occurred while posting the comment:', error);
-          throw error;
-        }
-      };
-      
+
+      const commentBtn = document.querySelector('.c');
+      commentBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const commentList = document.querySelector('.commentList');
+        const commentName = document.getElementById('commentName').value;
+        console.log(commentName);
+        const commentText = document.getElementById('commentTextarea').value;
+        const displayComment = document.createElement('div');
+        displayComment.innerHTML = `
+      <li id='lis'>${commentName}: ${commentText}</li>
+`;
+        commentList.appendChild(displayComment);
+      });
+      const commentName = document.getElementById('commentName').value;
+      console.log(commentName);
+      const commentText = document.getElementById('commentTextarea').value;
+
       await postComments(showId, commentName, commentText);
       await getComments(showId);
       // popup close
-const popup = document.querySelector('.popup');
-const closeIcon = document.querySelector('.close-icon');
+      const popup = document.querySelector('.popup');
+      const closeIcon = document.querySelector('.close-icon');
 
-closeIcon.addEventListener('click', () => {
-  popup.remove(); // Remove the popup from the DOM
-});
-//add eventListener to the comment button of popup
-
-
-
-
-
-
-  })
-}}
-
-const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ZkLkIUUV1lTLjqilepgf';
-
-async function getLikes() {
-  const response = await fetch(`${apiLikes}/likes`);
-  return response.json();
-}
-
-async function postLikes(id) {
-  const response = await fetch(`${apiLikes}/likes`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ item_id: id }),
-  });
-  return response.text();
+      closeIcon.addEventListener('click', () => {
+        popup.remove(); // Remove the popup from the DOM
+      });
+      // add eventListener to the comment button of popup
+    });
+  }
 }
 
 const containerAllImages = document.querySelector('.hero'); // Select the parent element

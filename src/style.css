@@ -83,9 +83,10 @@ footer {
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Include padding in the width and height */
   overflow-y: scroll;
-  padding-top: 70px;
-  padding-left: 20px;
 }
 
 hr {
@@ -93,7 +94,6 @@ hr {
   margin: 0;
 }
 
-/* Style for the popup content */
 .informations {
   padding: 20px;
   max-width: 80%;
@@ -108,18 +108,15 @@ hr {
 
 .popup .informations p {
   font-weight: 800;
-
   background-color: #fff;
 }
 
 .popup .informations input {
-  
   margin-bottom: 10px;
   padding: 10px;
 }
 
 .popup .informations textarea {
- 
   margin-bottom: 10px;
   height: 100px;
   padding: 10px;
@@ -157,7 +154,6 @@ hr {
   display: block;
   padding: 10px;
   margin-bottom: 30px;
- 
 }
 
 .commentList li {
@@ -170,12 +166,8 @@ hr {
 #commentForm {
   display: flex;
   flex-direction: column;
- 
-}
-.flex {
- display: flex;
-}
-comment-section {
-  margin-bottom: 100px;
 }
 
+.flex {
+  display: flex;
+}
