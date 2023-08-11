@@ -1,4 +1,4 @@
-import cardCounter from './sum'; // Adjust the import path if needed
+import cardCounter from './test'; // Adjust the import path if needed
 
 test('should update the card counter with the correct number of cards', () => {
   document.body.innerHTML = `

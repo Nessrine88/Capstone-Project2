@@ -175,3 +175,13 @@ async function initializeLikes() {
   await loadImage();
   await initializeLikes(); // Wait for the likes to be initialized
 })();
+
+
+const cardCounter = () => {
+  const cards = document.querySelectorAll('.containerLike');
+  return cards.length;
+};
+setTimeout(() => {
+  const show = document.getElementById('show');
+  show.textContent = `shows (${cardCounter()})`;
+}, 1000);
