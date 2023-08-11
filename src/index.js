@@ -1,7 +1,7 @@
 // index.js
 import './style.css';
 import {
-  postComments, postLikes, getLikes, apiLikes,displayComments
+  postComments, postLikes, getLikes, apiLikes, displayComments,
 } from './commentApi.js';
 
 let pathImage;
@@ -50,10 +50,7 @@ async function loadImage() {
     containerLike.appendChild(commentButton);
 
     // nessrine code
-  
-    
-    
-    
+
     commentButton.addEventListener('click', async (e) => {
       const showInfo = arr[i].show;
       const showId = showInfo.id;
@@ -63,28 +60,27 @@ async function loadImage() {
       const { summary } = showInfo;
       const containerLike = e.target.parentElement;
       const imgPath = containerLike.parentElement.querySelector('img').src;
-      var commentList = document.querySelector('.commentList');
-    
+      const commentList = document.querySelector('.commentList');
+
       const getComments = async (itemId) => {
         try {
           const response = await fetch(`${apiLikes}/comments?item_id=${itemId}`);
-      
+
           if (!response.ok) {
             throw new Error('Failed to fetch comments');
           }
-      
+
           const responseData = await response.json();
           console.log('Successfully fetched comments:', responseData);
-      
+
           displayComments(responseData, commentList);
-      
+
           return responseData;
         } catch (error) {
           console.error('An error occurred while fetching comments:', error);
           throw error;
         }
       };
-        
 
       const popupContainer = document.querySelector('.popupContainer');
       popupContainer.innerHTML = `
@@ -120,11 +116,9 @@ async function loadImage() {
 
       `;
       await getComments(showId);
-      
 
       const commentBtn = document.querySelector('.c');
 
-      
       commentBtn.addEventListener('click', async (e) => {
         e.preventDefault();
         const commentList = document.querySelector('.commentList');
@@ -136,10 +130,8 @@ async function loadImage() {
 `;
         commentList.appendChild(displayComment);
         await postComments(showId, commentName, commentText);
-      
       });
-    
-      
+
       // popup close
       const popup = document.querySelector('.popup');
       const closeIcon = document.querySelector('.close-icon');
@@ -149,8 +141,6 @@ async function loadImage() {
       });
       // add eventListener to the comment button of popup
     });
-
-
   }
 }
 
