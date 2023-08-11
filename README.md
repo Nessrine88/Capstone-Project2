@@ -39,6 +39,7 @@
 - **[User-friendly Interface]**
 ## 🚀 Live Demo <a name="live-demo"></a>
 ### [ live demo link ](https://nessrine88.github.io/Capstone-Project2/dist/)
+### [ short demo video about the project ](https://drive.google.com/file/d/1gwAwAfqBCahQnI5nii4XFbRWeG08KLY2/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
