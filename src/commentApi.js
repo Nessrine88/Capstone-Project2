@@ -5,7 +5,7 @@ function displayComments(responseData, commentList) {
   for (let i = 0; i < responseData.length; i += 1) {
     commentList = document.querySelector('.commentList');
     const commentDiv = document.createElement('div');
-    commentDiv.innerHTML = `<span>comment </span> ${i + 1}:<span>${responseData[i].username}: ${responseData[i].comment}</span>`;
+    commentDiv.innerHTML = `<span>comment number</span> :${i + 1}<p>${responseData[i].username}: ${responseData[i].comment}nps</p>`;
     commentList.appendChild(commentDiv);
   }
 }
