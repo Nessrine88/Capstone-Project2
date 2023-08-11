@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-  <h3><b>LeaderBoard</b></h3>
+  <h3><b>Tv Shows</b></h3>
 
 </div>
 # 📗 Table of Contents
@@ -38,7 +38,8 @@
 
 - **[User-friendly Interface]**
 ## 🚀 Live Demo <a name="live-demo"></a>
-### [ live demo link ](https://zabihullahnooriwardak.github.io/LeaderBoard/dist/)
+### [ live demo link ](https://nessrine88.github.io/Capstone-Project2/dist/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -53,7 +54,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
  node.js installed
  webpack installed
-
+ Es linter installed
 ### Setup
 
 Clone this repository to your desired folder:
@@ -62,7 +63,7 @@ And go to that folder where you want the project for example if you want to have
   cd my-folder
   C:\Users\Dell\my-folder
 After you can clone using this command  
-  git clone https://github.com/ZabihullahNooriWardak/LeaderBoard.git
+  git clone https://github.com/Nessrine88/Capstone-Project2.git
 
 
 ### Install
@@ -91,6 +92,10 @@ and from the root directory run npm start to see in the live server.
 - Twitter: [@twitterhandle](https://twitter.com/ZabiNoo31954752)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/zabih-noori-aa59a924a/)
 
+👤 **Macherki Nessrine**
+- GitHub: [@githubhandle](https://github.com/Nessrine88)
+- Twitter: [@twitterhandle](https://twitter.com/Nessour88)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nessrine-macherki-86959196/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
