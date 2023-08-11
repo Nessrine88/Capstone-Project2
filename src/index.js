@@ -43,8 +43,79 @@ async function loadImage() {
     const commentButton = document.createElement('button');
     commentButton.textContent = 'Comment';
     containerLike.appendChild(commentButton);
-  }
-}
+
+    //nessrine code
+
+    commentButton.addEventListener('click', async(e) => {
+     
+      let showInfo = arr[i].show;
+      let showId = showInfo.id;
+      const score = showInfo.score;
+      const genres = showInfo.genres.join(', ');
+      const premiered = showInfo.premiered;
+      const summary = showInfo.summary;
+      const containerLike = e.target.parentElement;
+      const imgPath = containerLike.parentElement.querySelector('img').src;
+      const popupContainer=document.querySelector('.popupContainer');
+     popupContainer.innerHTML = `
+
+     <div class="popup">
+     <div class="popup-header">
+       <i class="bx bx-x close-icon"></i>
+     </div>
+     <div class="imageContainer"><img src="${imgPath}" /></div>
+     <div class="informations">
+       <h1>${nameShow}</h1>
+       <hr>
+       ${score !== undefined ? `<p>Score ${score}</p>` : ''}
+       ${genres !== null ? `<p>Genres ${genres}</p>` : ''}
+       ${premiered !== null ? `<p>Premiered ${premiered}</p>` : ''}
+       ${summary !== null ? `<h2>Summary</h2><p> ${summary}</p>` : ''}
+       <form id='commentForm'>
+         <input id='commentName' type="text" placeholder="Name">
+         <textarea id='commentTextarea' placeholder="write a comment"></textarea>
+         <button class='c'>Comment</button>
+       </form>
+       
+       <div class="comments-section">
+       <h2>Comments</h2>
+       <hr>
+       <ul class="commentList"></ul>
+     </div>
+   
+      
+     </div>
+   </div>
+        
+
+      `;
+
+      // popup close
+const popup = document.querySelector('.popup');
+const closeIcon = document.querySelector('.close-icon');
+
+closeIcon.addEventListener('click', () => {
+  popup.remove(); // Remove the popup from the DOM
+});
+const commentBtn=document.querySelector('.c');
+commentBtn.addEventListener('click',(e)=>{
+e.preventDefault();
+
+const commentName=document.getElementById('commentName').value;
+const commentText=document.getElementById('commentTextarea').value;
+const displayComment = document.createElement('div');
+displayComment.innerHTML = `
+<li>${commentName}: ${commentText}</li>
+`;
+console.log(displayComment)
+const commentList=document.querySelector('.commentList');
+commentList.appendChild(displayComment)
+})
+
+
+
+  })
+}}
 
 const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ZkLkIUUV1lTLjqilepgf';
 
