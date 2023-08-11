@@ -176,7 +176,6 @@ async function initializeLikes() {
   await initializeLikes(); // Wait for the likes to be initialized
 })();
 
-
 const cardCounter = () => {
   const cards = document.querySelectorAll('.containerLike');
   return cards.length;
