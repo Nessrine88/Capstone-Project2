@@ -1,11 +1,15 @@
 const commentList = document.querySelector('.commentList');
-const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ZkLkIUUV1lTLjqilepgf';
 console.log(commentList);
+const apiLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ZkLkIUUV1lTLjqilepgf';
 function displayComments(responseData, commentList) {
   for (let i = 0; i < responseData.length; i += 1) {
+    const commentTitle = document.querySelector('.commentTitle');
+    commentTitle.innerHTML = `<h2>Comments (${responseData.length})</h2>`;
     commentList = document.querySelector('.commentList');
     const commentDiv = document.createElement('div');
-    commentDiv.innerHTML = `<span>comment </span> ${i + 1}:<span>${responseData[i].username}: ${responseData[i].comment}</span>`;
+
+    commentDiv.innerHTML = `<p>${responseData[i].username}: ${responseData[i].comment}</p>`;
+
     commentList.appendChild(commentDiv);
   }
 }

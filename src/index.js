@@ -1,5 +1,6 @@
 // index.js
 import './style.css';
+
 import {
   postComments, postLikes, getLikes, apiLikes, displayComments,
 } from './commentApi.js';
@@ -71,7 +72,7 @@ async function loadImage() {
           }
 
           const responseData = await response.json();
-          console.log('Successfully fetched comments:', responseData);
+          console.log('Successfully fetched comments:');
 
           displayComments(responseData, commentList);
 
@@ -106,7 +107,7 @@ async function loadImage() {
       </div>
       </div>
       <div class="comments-section">
-      <h2>Comments</h2>
+      <h2 class="commentTitle">Comments</h2>
       <hr>
       <ul class="commentList"></ul>
       </div>
@@ -125,7 +126,9 @@ async function loadImage() {
         const commentText = document.getElementById('commentTextarea').value;
         const displayComment = document.createElement('div');
         displayComment.innerHTML = `
-      <li ><span>comment </span> ${i + 1}:${commentName}: ${commentText}</li>
+
+      <li class='lis'>${commentName}: ${commentText} s</li>
+
 `;
         commentList.appendChild(displayComment);
         await postComments(showId, commentName, commentText);
@@ -162,6 +165,9 @@ async function initializeLikes() {
   const likesData = await getLikes();
 
   likeButtons.forEach(async (button) => {
+    button.addEventListener('click', () => {
+      button.style.color = 'red';
+    });
     const showId = button.id;
     const likeData = likesData.find((item) => item.item_id === showId);
     if (likeData) {

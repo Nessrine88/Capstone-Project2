@@ -26,10 +26,14 @@ img {
 .containerLike {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   margin-top: -20px;
   margin-bottom: 10px;
+}
+
+.containerLike button {
+  margin-left: 25%;
 }
 
 #header {
@@ -42,6 +46,7 @@ ul li {
   background-color: grey;
   border-radius: 5px;
   padding: 5px;
+  color: aquamarine;
 }
 
 header {
@@ -90,7 +95,6 @@ footer {
 }
 
 hr {
-  width: 82.5%;
   margin: 0;
 }
 
