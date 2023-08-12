@@ -75,6 +75,7 @@ footer {
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  font-family: sans-serif;
 }
 
 /* Style for the popup container */
@@ -143,8 +144,8 @@ hr {
 .close-icon {
   position: absolute;
   top: 10px;
-  left: 10px;
-  font-size: 24px;
+  right: 10px;
+  font-size: 48px;
   cursor: pointer;
   color: #333;
 }
