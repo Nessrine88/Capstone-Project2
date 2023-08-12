@@ -10,6 +10,7 @@ let pathImage;
 async function fetchApi() {
   const response = await fetch('https://api.tvmaze.com/search/shows?q=girls');
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
@@ -20,6 +21,7 @@ async function loadImage() {
     pathImage = arr[i].show.image.medium;
     const img = document.createElement('img');
     const ContainerAllImages = document.querySelector('.hero');
+
     img.src = pathImage;
     divConatinerSingleImage.appendChild(img);
     ContainerAllImages.appendChild(divConatinerSingleImage);

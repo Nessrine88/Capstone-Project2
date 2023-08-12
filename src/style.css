@@ -142,11 +142,12 @@ hr {
 
 .close-icon {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 24px;
+  top: 40px;
+  right: 30px;
   cursor: pointer;
   color: #333;
+  font-weight: bolder;
+  font-size: 40px;
 }
 
 .close-icon:hover {
@@ -174,4 +175,5 @@ hr {
 
 .flex {
   display: flex;
+  margin: 20px 0 0 0;
 }
