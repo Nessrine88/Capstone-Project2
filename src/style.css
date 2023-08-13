@@ -143,7 +143,7 @@ hr {
 .close-icon {
   position: absolute;
   top: 40px;
-  right: 30px;
+  right: 40px;
   cursor: pointer;
   color: #333;
   font-weight: bolder;
@@ -176,4 +176,8 @@ hr {
 .flex {
   display: flex;
   margin: 20px 0 0 0;
+}
+
+.popup img {
+  margin-top: 70px;
 }
